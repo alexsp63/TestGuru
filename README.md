@@ -1,24 +1,25 @@
-# README
+Предполагаемый список сущностей и примерные атрибуты:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1) User:
+id (pk)
+username (not null)
+password (захешированный, not null)
+first_name
+second_name
+ROLE (домен: админ или простой пользователь)
 
-Things you may want to cover:
+2) Test:
+id (pk)
+description
 
-* Ruby version
+3) Question:
+id (pk)
+text (not null)
+correct_answer (not null)
+test_id (fk)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4) Score:
+id (pk)
+user_id (fk)
+test_id (fk)
+points (not null)

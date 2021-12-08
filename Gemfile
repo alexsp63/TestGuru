@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'russian', '~> 0.6.0'   # после сделала bundle update
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
