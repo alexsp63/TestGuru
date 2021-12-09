@@ -19,6 +19,5 @@ module TestGuru
     config.time_zone = "Moscow"   # Time.zone.now   # проверила, что установилось
     config.i18n.default_locale = :ru
     # config.eager_load_paths << Rails.root.join("extras")
-    VERSION = '1.0.0'.freeze
   end
 end
