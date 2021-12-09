@@ -6,11 +6,12 @@ username (not null);
 password (захешированный, not null);
 first_name;
 second_name;
-ROLE (домен: админ (который производит манипуляции над тестами) или простой пользователь (который проходит тесты))
+ROLE (домен: админ (который производит манипуляции над тестами) или простой пользователь (который проходит тесты));
 
 2) Test:
 id (pk);
 description;
+category_id (fk);
 
 3) Question:
 id (pk);
@@ -22,4 +23,13 @@ test_id (fk);
 id (pk);
 user_id (fk);
 test_id (fk);
-points (not null)
+points (not null);
+
+5) Answer
+id (pk);
+text (not null);
+question_id (fk);
+
+6) Category
+id (pk);
+name (not null)
