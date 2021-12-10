@@ -19,8 +19,9 @@ development:
   encoding: unicode
   database: development
   pool: 5
-  username: brenden
-  password:
+  username: alexsp
+  password: '123456'
+  port: 5433
   timeout: 5000
  
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -46,7 +47,7 @@ production:
   encoding: unicode
   database: production
   pool: 5
-  username: brenden
+  username: postgres
   password:
   timeout: 5000
  
@@ -58,6 +59,6 @@ test:
   encoding: unicode
   database: test
   pool: 5
-  username: brenden
+  username: postgres
   password:
   timeout: 5000
