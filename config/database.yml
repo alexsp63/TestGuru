@@ -47,8 +47,9 @@ production:
   encoding: unicode
   database: production
   pool: 5
-  username: postgres
-  password:
+  username: alexsp
+  password: '123456'
+  port: 5433
   timeout: 5000
  
 # Warning: The database defined as "test" will be erased and
@@ -59,6 +60,7 @@ test:
   encoding: unicode
   database: test
   pool: 5
-  username: postgres
-  password:
+  username: alexsp
+  password: '123456'
+  port: 5433
   timeout: 5000
