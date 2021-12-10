@@ -10,26 +10,27 @@ ROLE (домен: админ (который производит манипул
 
 2) Test:
 id (pk);
-description;
+title;
+level;
 category_id (fk);
 
 3) Question:
 id (pk);
 text (not null);
-correct_answer (not null);
 test_id (fk);
 
-4) Score:
+<!-- 4) Score:
 id (pk);
 user_id (fk);
 test_id (fk);
-points (not null);
+points (not null); -->
 
 5) Answer
 id (pk);
+correct (boolean);
 text (not null);
 question_id (fk);
 
 6) Category
 id (pk);
-name (not null)
+title (not null)
