@@ -13,6 +13,7 @@ id (pk);
 title;
 level;
 category_id (fk);
+author_id (fk);
 
 3) Question:
 id (pk);
