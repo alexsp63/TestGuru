@@ -5,11 +5,11 @@ one:
   password: MyString
   first_name: MyString
   second_name: MyString
-  ROLE: MyString
+  role: MyString
 
 two:
   username: MyString
   password: MyString
   first_name: MyString
   second_name: MyString
-  ROLE: MyString
+  role: MyString
