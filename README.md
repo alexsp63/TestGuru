@@ -1,35 +1,13 @@
-Предполагаемый список сущностей и примерные атрибуты:
+Сущности:
 
-1) User:
-id (pk);
-username (not null);
-password (захешированный, not null);
-first_name;
-second_name;
-ROLE (домен: админ (который производит манипуляции над тестами) или простой пользователь (который проходит тесты));
+1) User
 
-2) Test:
-id (pk);
-description;
-category_id (fk);
+2) Test
 
-3) Question:
-id (pk);
-text (not null);
-correct_answer (not null);
-test_id (fk);
+3) Question
 
-4) Score:
-id (pk);
-user_id (fk);
-test_id (fk);
-points (not null);
+<!-- 4) Score
 
 5) Answer
-id (pk);
-text (not null);
-question_id (fk);
 
 6) Category
-id (pk);
-name (not null)
