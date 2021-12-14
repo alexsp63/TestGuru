@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   
-  def get_all_tests_by_level(l)
-    Test.joins('JOIN scores ON scores.test_id = tests.id').where('user_id = :user_id AND level = :level', user_id: self.id, level: l)
+  def all_tests_by_level(level)
+    Test.joins('JOIN scores ON scores.test_id = tests.id')
+          .where(scores: {user_id: self.id}, tests: {level: level})
   end
     
 end

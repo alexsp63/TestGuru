@@ -8,9 +8,7 @@
 
 # юзеры
 
-users_hash = {}
-
-User.create!([
+users = User.create!([
   {
     username: 'alexsp',
     password: '123abc',
@@ -25,13 +23,11 @@ User.create!([
     second_name: 'Ivanov',
     role: 'user'
   }
-]).each { |u| users_hash[u.username] = u.id }
+])
 
 # категории
 
-categories_hash = {}
-
-Category.create!([
+categories = Category.create!([
   {
     title: 'Backend'
   },
@@ -41,67 +37,63 @@ Category.create!([
   {
     title: 'Machine Learning'
   }
-]).each { |c| categories_hash[c.title] = c.id }
+])
 
 # тесты
 
-tests_hash = {}
-
-Test.create!([
+tests = Test.create!([
   {
     title: 'Rails Basics',
-    category_id: categories_hash['Backend'],
-    author_id: users_hash['alexsp']
+    category_id: categories[0].id,
+    author_id: users[0].id
   },
   {
     title: 'Advanced Rails',
-    category_id: categories_hash['Backend'],
-    author_id: users_hash['alexsp'],
+    category_id: categories[0].id,
+    author_id: users[0].id,
     level: 3
   },
   {
     title: 'CSS Basics',
-    category_id: categories_hash['Frontend'],
-    author_id: users_hash['alexsp']
+    category_id: categories[1].id,
+    author_id: users[0].id
   }
-]).each { |t| tests_hash[t.title] = t.id }
+])
 
 # вопросы
 
-questions_id_arr = []
-
-Question.create!([
+questions = Question.create!([
   {
     title: 'Где в Rails приложении создаются классы моделей?',
-    test_id: tests_hash['Rails Basics']
+    test_id: tests[0].id
   },
   {
     title: 'Какая СУБД используется по умолчанию?',
-    test_id: tests_hash['Rails Basics']
+    test_id: tests[0].id
   },
   {
     title: 'От какого класса наследуются классы сущностей?',
-    test_id: tests_hash['Rails Basics']
+    test_id: tests[0].id
   }
-]).each { |q| questions_id_arr.push(q.id) }
+])
 
 # ответы
 
-Answer.create!([
+answers = Answer.create!([
   {
     title: 'app/models',
     correct: true,
-    question_id: questions_id_arr[0]
+    question_id: questions[0].id
   },
   {
     title: 'sqlite',
     correct: true,
-    question_id: questions_id_arr[1]
+    question_id: questions[1].id
   },
   {
     title: 'ApplicationRecord',
     correct: true,
-    question_id: questions_id_arr[2]
+    question_id: questions[2].id
   }
 ])
 
@@ -109,11 +101,11 @@ Answer.create!([
 
 Score.create!([
   {
-    test_id: tests_hash['Rails Basics'],
-    user_id: users_hash['userr1']
+    test_id: tests[0].id,
+    user_id: users[1].id
   },
   {
-    test_id: tests_hash['CSS Basics'],
-    user_id: users_hash['userr1']
+    test_id: tests[2].id,
+    user_id: users[1].id
   }
 ])
