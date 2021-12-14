@@ -6,7 +6,7 @@
 
 3) Question
 
-<!-- 4) Score
+4) Score
 
 5) Answer
 
