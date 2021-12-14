@@ -25,7 +25,7 @@ User.create!([
     second_name: 'Ivanov',
     role: 'user'
   }
-]).each { |u| users_hash[u.username] = u.id}
+]).each { |u| users_hash[u.username] = u.id }
 
 # категории
 
@@ -41,7 +41,7 @@ Category.create!([
   {
     title: 'Machine Learning'
   }
-]).each { |c| categories_hash[c.title] = c.id}
+]).each { |c| categories_hash[c.title] = c.id }
 
 # тесты
 
@@ -64,7 +64,7 @@ Test.create!([
     category_id: categories_hash['Frontend'],
     author_id: users_hash['alexsp']
   }
-]).each { |t| tests_hash[t.title] = t.id}
+]).each { |t| tests_hash[t.title] = t.id }
 
 # вопросы
 
