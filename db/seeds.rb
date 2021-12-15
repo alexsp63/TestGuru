@@ -79,7 +79,7 @@ questions = Question.create!([
 
 # ответы
 
-answers = Answer.create!([
+Answer.create!([
   {
     title: 'app/models',
     correct: true,
