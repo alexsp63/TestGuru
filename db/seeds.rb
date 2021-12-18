@@ -44,19 +44,19 @@ categories = Category.create!([
 tests = Test.create!([
                        {
                          title: 'Rails Basics',
-                         category_id: categories[0].id,
-                         author_id: users[0].id
+                         category: categories[0],
+                         author: users[0]
                        },
                        {
                          title: 'Advanced Rails',
-                         category_id: categories[0].id,
-                         author_id: users[0].id,
+                         category: categories[0],
+                         author: users[0],
                          level: 3
                        },
                        {
                          title: 'CSS Basics',
-                         category_id: categories[1].id,
-                         author_id: users[0].id
+                         category: categories[1],
+                         author: users[0]
                        }
                      ])
 
@@ -65,15 +65,15 @@ tests = Test.create!([
 questions = Question.create!([
                                {
                                  title: 'Где в Rails приложении создаются классы моделей?',
-                                 test_id: tests[0].id
+                                 test: tests[0]
                                },
                                {
                                  title: 'Какая СУБД используется по умолчанию?',
-                                 test_id: tests[0].id
+                                 test: tests[0]
                                },
                                {
                                  title: 'От какого класса наследуются классы сущностей?',
-                                 test_id: tests[0].id
+                                 test: tests[0]
                                }
                              ])
 
@@ -83,17 +83,17 @@ Answer.create!([
                  {
                    title: 'app/models',
                    correct: true,
-                   question_id: questions[0].id
+                   question: questions[0]
                  },
                  {
                    title: 'sqlite',
                    correct: true,
-                   question_id: questions[1].id
+                   question: questions[1]
                  },
                  {
                    title: 'ApplicationRecord',
                    correct: true,
-                   question_id: questions[2].id
+                   question: questions[2]
                  }
                ])
 
