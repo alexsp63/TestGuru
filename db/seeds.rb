@@ -88,6 +88,21 @@ Answer.create!([
                    question: questions[0]
                  },
                  {
+                   title: 'config',
+                   correct: false,
+                   question: questions[0]
+                 },
+                 {
+                   title: 'views',
+                   correct: false,
+                   question: questions[0]
+                 },
+                 {
+                   title: 'app',
+                   correct: false,
+                   question: questions[0]
+                 },
+                 {
                    title: 'sqlite',
                    correct: true,
                    question: questions[1]
