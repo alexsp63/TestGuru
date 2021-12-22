@@ -1,15 +1,16 @@
 class Answer < ApplicationRecord
+  MAX_QUANTITY = 4
+
   belongs_to :question
 
-  scope :correct_answers, -> { where(correct: true) }
-
   validates :title, presence: true
-  validate :validate_answers_quantity
+  validate :validate_answers_quantity, on: :create
+
+  scope :correct_answers, -> { where(correct: true) }
 
   private
 
   def validate_answers_quantity
-    max_q = 4
-    errors.add(:title) if !question.nil? && question.answers.size > max_q - 1
+    errors.add(:title) if question.answers.count >= MAX_QUANTITY
   end
 end

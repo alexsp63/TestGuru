@@ -3,9 +3,9 @@ class User < ApplicationRecord
   has_many :tests, through: :tests_users, dependent: :destroy
   has_many :authored_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
 
+  validates :email, presence: true
+
   def all_tests_by_level(level)
     tests.where(level: level)
   end
-
-  validates :email, presence: true
 end
