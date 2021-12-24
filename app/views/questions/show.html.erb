@@ -1,0 +1,7 @@
+<h1>Question <%= @question.id %> </h1>
+
+<p> Question text: <%= @question.title %> </p><br>
+
+<p>
+    <%= link_to 'Destroy', question_path(@question), data: {method: :delete}  %>
+</p>
