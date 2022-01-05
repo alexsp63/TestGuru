@@ -3,5 +3,7 @@
 <p> Question text: <%= @question.title %> </p><br>
 
 <p>
-  <%= link_to 'Destroy', question_path(@question), data: {method: :delete}  %>
+  <%= link_to 'Back to all questions', test_path(@question.test) %> |
+  <%= link_to 'Edit', edit_question_path(@question) %> |
+  <%= link_to 'Delete', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
