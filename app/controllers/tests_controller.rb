@@ -49,7 +49,7 @@ class TestsController < ApplicationController
     params.require(:test).permit(:title, :level, :category_id, :author_id)
   end
 
-  def rescue_with_question_not_found
+  def rescue_with_test_not_found
     render plain: 'No test found'
   end
 end
