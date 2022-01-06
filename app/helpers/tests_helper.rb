@@ -1,10 +1,9 @@
 module TestsHelper
-
   def test_header(test)
     if test.persisted?
       "Edit #{test.title.titleize} Test"
     else
-      "Create New Test"
+      'Create New Test'
     end
   end
 
