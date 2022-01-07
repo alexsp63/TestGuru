@@ -113,7 +113,3 @@ Answer.create!([
                    question: questions[2]
                  }
                ])
-
-# результаты тестирования
-
-users[1].tests.push([tests[0], tests[2]])
