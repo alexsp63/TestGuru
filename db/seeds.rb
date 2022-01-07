@@ -108,8 +108,23 @@ Answer.create!([
                    question: questions[1]
                  },
                  {
+                   title: 'postgresql',
+                   correct: false,
+                   question: questions[1]
+                 },
+                 {
+                   title: 'mysql',
+                   correct: false,
+                   question: questions[1]
+                 },
+                 {
                    title: 'ApplicationRecord',
                    correct: true,
+                   question: questions[2]
+                 },
+                 {
+                   title: 'AciveRecord',
+                   correct: false,
                    question: questions[2]
                  }
                ])

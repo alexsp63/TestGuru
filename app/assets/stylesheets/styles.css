@@ -9,3 +9,11 @@ footer {
     width: 100%;
     background: rgb(0, 0, 0);
 }
+
+.success-message {
+    color: green;
+}
+
+.fail-message {
+    color: red;
+}
