@@ -4,7 +4,7 @@
 
     <ul>
       <% resource.errors.each do |message| %>
-          <li><%= message.attribute %>: <%= message.type %></li>
+          <li><%= message.full_message %></li>
       <% end %>
     </ul>
   </div>
