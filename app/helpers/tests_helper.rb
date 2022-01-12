@@ -13,6 +13,6 @@ module TestsHelper
     when 2..4 then :middle
     when 5.. then :difficult
     else :hero
-  end
+    end
   end
 end

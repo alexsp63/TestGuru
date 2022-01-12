@@ -1,0 +1,10 @@
+<h1>The <%= @test_passage.test.title %> Test was Comleted </h1>
+
+<p class=" <%= result_class(@test_passage) %> ">
+  Your result: <%= @test_passage.score %> of <%= @test_passage.total %> (<%= @test_passage.percent %>%)<br>
+  <%= result_message(@test_passage) %>
+</p>
+
+<p>
+  <%= link_to 'Back to all tests', tests_path %>
+</p>
