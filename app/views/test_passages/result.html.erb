@@ -1,8 +1,8 @@
 <h1>The <%= @test_passage.test.title %> Test was Comleted </h1>
 
-<p class=" <%= @test_passage.result_class %> ">
+<p class=" <%= result_class(@test_passage) %> ">
   Your result: <%= @test_passage.score %> of <%= @test_passage.total %> (<%= @test_passage.percent %>%)<br>
-  <%= @test_passage.result_message %>
+  <%= result_message(@test_passage) %>
 </p>
 
 <p>

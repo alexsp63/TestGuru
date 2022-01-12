@@ -36,14 +36,6 @@ class TestPassage < ApplicationRecord
     percent >= SUCCESS_RATIO
   end
 
-  def result_class
-    success? ? 'success-message' : 'fail-message'
-  end
-
-  def result_message
-    success? ? 'Test is passed' : 'Test is not passed'
-  end
-
   private
 
   def before_validation_set_current_question
