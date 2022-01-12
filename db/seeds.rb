@@ -11,19 +11,17 @@
 users = User.create!([
                        {
                          username: 'alexsp',
-                         password: '123abc',
+                         password_digest: '123abc',
                          email: 'admin@gmail.com',
                          first_name: 'Sofya',
                          second_name: 'Popova',
-                         role: 'admin'
                        },
                        {
                          username: 'userr1',
-                         password: '123335',
+                         password_digest: '123335',
                          email: 'user@gmail.com',
                          first_name: 'Ivan',
                          second_name: 'Ivanov',
-                         role: 'user'
                        }
                      ])
 
