@@ -18,7 +18,7 @@
 
   <div>>
     <%= form.label :author_id %><br>
-    <%= form.collection_select :author_id, User.where(role: :admin), :id, :username, prompt: true %>
+    <%= form.collection_select :author_id, User.all, :id, :username, prompt: true %>
   </div>
 
   <div>>

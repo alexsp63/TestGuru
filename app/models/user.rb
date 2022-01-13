@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   attr_reader :password
   attr_writer :password_confirmation
 
@@ -21,5 +20,4 @@ class User < ApplicationRecord
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
-
 end

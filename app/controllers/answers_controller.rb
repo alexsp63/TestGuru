@@ -1,6 +1,9 @@
 class AnswersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_answer, only: %i[show edit update destroy]
   before_action :find_question, only: %i[new create]
+
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_answer_not_found
 
   def index
     @answers = Answer.all
@@ -49,5 +52,9 @@ class AnswersController < ApplicationController
 
   def find_question
     @question = Question.find(params[:question_id])
+  end
+
+  def rescue_with_answer_not_found
+    render plain: 'No answer found'
   end
 end
