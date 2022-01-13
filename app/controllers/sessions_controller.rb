@@ -21,6 +21,6 @@ class SessionsController < ApplicationController
   private
 
   def redirection_page
-    cookies[:original] || tests_path
+    cookies.delete(:original) || tests_path
   end
 end

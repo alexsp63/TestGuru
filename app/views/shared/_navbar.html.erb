@@ -2,7 +2,7 @@
   <ul class="nav-ul">
     <li class="nav-li"><p>Welcome, <b><%= current_user.username %></b> Guru </p></li>
     <li class="nav-li"><%= link_to 'TestGuru', tests_path %></li>
-    <li class="nav-li"><%= link_to 'Logout', logout_path %></li>
+    <li class="nav-li"><%= link_to 'Logout', logout_path, method: :delete %></li>
   </ul>
   <% else %>
     <ul class="nav-ul">
