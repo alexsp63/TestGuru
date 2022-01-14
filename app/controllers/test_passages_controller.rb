@@ -24,6 +24,7 @@ class TestPassagesController < ApplicationController
   end
 
   def rescue_with_no_questions
+    flash[:alert] = 'No questions for this test'
     redirect_to tests_path
   end
 end

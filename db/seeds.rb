@@ -11,19 +11,17 @@
 users = User.create!([
                        {
                          username: 'alexsp',
-                         password: '123abc',
+                         password_digest: '$2a$12$VDlnnAtwwYnzk3xvvl2/ReecvDh9INT7ZKABzWW4HzXbFNtgpEsFG',
                          email: 'admin@gmail.com',
                          first_name: 'Sofya',
-                         second_name: 'Popova',
-                         role: 'admin'
+                         second_name: 'Popova'
                        },
                        {
                          username: 'userr1',
-                         password: '123335',
+                         password_digest: '$2a$12$1wS5wv/iy5j/UBQqLV.RtOYS68ME4o4lKU2ss44fAcO9nPOCWlXYq',
                          email: 'user@gmail.com',
                          first_name: 'Ivan',
-                         second_name: 'Ivanov',
-                         role: 'user'
+                         second_name: 'Ivanov'
                        }
                      ])
 

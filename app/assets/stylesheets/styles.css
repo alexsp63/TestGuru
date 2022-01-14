@@ -3,11 +3,10 @@ html, body {
 }
   
 footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    margin-bottom: -50px;
     width: 100%;
-    background: rgb(0, 0, 0);
+    background: rgb(36, 36, 36);
+    color: whitesmoke;
 }
 
 .success-message {
