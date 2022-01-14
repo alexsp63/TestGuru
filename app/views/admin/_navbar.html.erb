@@ -1,0 +1,5 @@
+<ul class="nav-ul admin">
+  <li class="nav-li admin"><p>Welcome, <b><%= current_user.username %></b> Admin </p></li>
+  <li class="nav-li admin"><%= link_to 'TestGuru', admin_tests_path %></li>
+  <li class="nav-li admin"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+</ul>
