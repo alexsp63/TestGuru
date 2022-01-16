@@ -7,7 +7,7 @@ module ApplicationHelper
     link_to title, "https://github.com/#{author}/#{repo}", target: '_blank', rel: 'nofollow'
   end
 
-  def flash_message(key, message)
-    content_tag :p, message, class: "flash #{key}"
+  def flash_message(flash_key)
+    content_tag :p, flash[flash_key], class: "flash #{flash_key}" if flash[flash_key]
   end
 end

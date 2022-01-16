@@ -46,7 +46,7 @@ en:
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
     sessions:
-      signed_in: "Signed in successfully."
+      signed_in: Hello, %{first_name} %{second_name}! 
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
     unlocks:
@@ -150,7 +150,7 @@ ru:
       already_signed_out: Выход из системы уже выполнен.
       new:
         sign_in: Войти
-      signed_in: Вход в систему выполнен.
+      signed_in: Привет, %{first_name} %{second_name}!
       signed_out: Выход из системы выполнен.
     shared:
       links:
