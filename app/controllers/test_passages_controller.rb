@@ -2,7 +2,7 @@ class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show update result gist]
 
-  # rescue_from NoMethodError, with: :rescue_with_no_questions
+  rescue_from NoMethodError, with: :rescue_with_no_questions
 
   def show; end
 
