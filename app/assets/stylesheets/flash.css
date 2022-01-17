@@ -4,6 +4,10 @@
     padding: 10px;
 }
 
+.flash.notice {
+    border-color: rgb(101, 224, 101);
+}
+
 .flash.alert {
     border-color: rgb(216, 64, 64);
 }

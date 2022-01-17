@@ -1,8 +1,0 @@
-<h1><%= question_header(@question, @question.test) %></h1>
-
-<%= render 'form' %>
-
-<p>
-  <%= link_to 'Back to all questions', test_path(@question.test) %> |
-  <%= link_to 'Delete', test_path(@question.test), method: :delete, data: { confirm: 'Are you sure?' } %> 
-</p>

@@ -1,6 +1,11 @@
 class User < ApplicationRecord
-  attr_reader :password
-  attr_writer :password_confirmation
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :confirmable
 
   has_many :test_passages
   has_many :tests, through: :test_passages, dependent: :destroy
@@ -8,10 +13,6 @@ class User < ApplicationRecord
 
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
   validates :username, presence: true
-  validates :first_name, presence: true
-  validates :second_name, presence: true
-
-  has_secure_password
 
   def all_tests_by_level(level)
     tests.where(level: level)

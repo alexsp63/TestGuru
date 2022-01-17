@@ -28,3 +28,15 @@
 .nav-li a:hover {
     background-color: #111;
 }
+
+.nav-ul.admin {
+    background-color: rgb(196, 196, 196);
+}
+
+.nav-li.admin p, .nav-li.admin a {
+    color: black;
+}
+
+.nav-li.admin a:hover {
+    background-color: rgb(109, 109, 109);
+}
