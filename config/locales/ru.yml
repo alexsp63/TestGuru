@@ -1,5 +1,6 @@
 ru:
-  test_passages:
-    gist:
-      success: "Gist успешно создан"
+  gists:
+    create:
+      success: "Gist %{link} успешно создан"
       failure: "Во время сохранения gist произошла ошибка"
+    description: "Вопрос по тесту %{title} TestGuru"

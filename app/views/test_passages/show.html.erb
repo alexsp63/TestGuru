@@ -14,7 +14,7 @@
   <% end %>
 
   <div>
-    <%= link_to 'Gist Question', gist_test_passage_path, method: :post %><br>
+    <%= link_to 'Gist Question', test_passage_gists_path(@test_passage), method: :post %><br>
     <%= form.submit 'Next' %>
   </div>
 <% end %>
