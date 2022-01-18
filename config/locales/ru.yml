@@ -1,6 +1,6 @@
 ru:
   gists:
     create:
-      success: "Gist %{link} успешно создан"
+      success: "%{link} успешно создан"
       failure: "Во время сохранения gist произошла ошибка"
     description: "Вопрос по тесту %{title} TestGuru"

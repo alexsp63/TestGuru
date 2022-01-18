@@ -8,6 +8,6 @@ module ApplicationHelper
   end
 
   def flash_message(flash_key)
-    content_tag :p, flash[flash_key], class: "flash #{flash_key}" if flash[flash_key]
+    content_tag :p, sanitize(flash[flash_key]), class: "flash #{flash_key}" if flash[flash_key]
   end
 end

@@ -2,15 +2,14 @@ class GistsController < ApplicationController
   def create
     @test_passage = TestPassage.find(params[:test_passage_id])
     gist_question = @test_passage.current_question
-    created_gist_link = GistQuestionService.new(gist_question).call.html_url
+    result = GistQuestionService.new(gist_question).call
 
-    @gist = gist_question.gists.build(
-      url: created_gist_link,
-      user: current_user
-    )
-
-    flash_options = if @gist.save
-                      { notice: t('.success', link: created_gist_link) }
+    flash_options = if result.success?
+                      @gist = gist_question.gists.create!(
+                        url: response.html_url,
+                        user: current_user
+                      )
+                      { notice: t('.success', link: "<a href='#{response.html_url}' target='_blank'>Gist</a>") }
                     else
                       { alert: t('.failure') }
                     end

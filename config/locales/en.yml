@@ -33,7 +33,6 @@ en:
   hello: "Hello world"
   gists:
     create:
-      success: "Gist %{link} was successfully created!"
+      success: "%{link} was successfully created!"
       failure: "An error occurred while saving gist"
     description: "A question about %{title} from TestGuru"
- 
