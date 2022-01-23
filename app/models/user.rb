@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :authored_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
+  has_many :gists, dependent: :destroy
 
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
   validates :username, presence: true
