@@ -6,10 +6,10 @@ class GistsController < ApplicationController
 
     flash_options = if result.success?
                       @gist = gist_question.gists.create!(
-                        url: response.html_url,
+                        url: result.html_url,
                         user: current_user
                       )
-                      { notice: t('.success', link: "<a href='#{response.html_url}' target='_blank'>Gist</a>") }
+                      { notice: t('.success_html', link: result.html_url).html_safe }
                     else
                       { alert: t('.failure') }
                     end
