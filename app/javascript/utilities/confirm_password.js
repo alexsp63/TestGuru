@@ -1,44 +1,42 @@
 document.addEventListener('turbolinks:load', function() {
-    var passwordField = document.querySelector('.inputed-password')
-    var passwordConfirmationField = document.querySelector('.confirmed-password')
+    const userForm = document.querySelector('.new_user')
 
-    if(passwordField && passwordConfirmationField) { 
-        passwordField.addEventListener('input', comparePasswords)
-        passwordConfirmationField.addEventListener('input', comparePasswords)
+    const passwordConfirmationField = document.querySelector('.confirmed-password')
+    const password = document.getElementById('inputed_password')
+    const passwordConfirmation = document.getElementById('confirmed_password')
+
+    const matchingIcon = document.querySelector('.octicon-dot-fill')
+
+    if (password || passwordConfirmation) {
+        userForm.addEventListener('input', function() {
+            if (passwordConfirmation.value) {
+                matchingIcon.classList.remove('hide')
+                if (password.value != passwordConfirmation.value) {
+                    if (passwordConfirmationField.classList.contains('correct')) {
+                        passwordConfirmationField.classList.remove('correct')
+                        matchingIcon.classList.remove('confirmation-success')
+                    }
+                    matchingIcon.classList.add('confirmation-fail')
+                    passwordConfirmationField.classList.add('not-correct')
+                } else {
+                    if (passwordConfirmationField.classList.contains('not-correct')) {
+                        passwordConfirmationField.classList.remove('not-correct')
+                        matchingIcon.classList.remove('confirmation-fail')
+                    }
+                    matchingIcon.classList.add('confirmation-success')
+                    passwordConfirmationField.classList.add('correct')
+                }
+            } else {
+                matchingIcon.classList.add('hide')
+                if (passwordConfirmationField.classList.contains('correct')) {
+                    passwordConfirmationField.classList.remove('correct')
+                    matchingIcon.classList.remove('confirmation-success')
+                }
+                if (passwordConfirmationField.classList.contains('not-correct')) {
+                    passwordConfirmationField.classList.remove('not-correct')
+                    matchingIcon.classList.remove('confirmation-fail')
+                }
+            }
+        })
     }
 })
-
-function comparePasswords() {
-    var field = document.querySelector('.confirmed-password')
-    var passwordText = document.getElementById('inputed_password').value
-    var passwordConfirmationText = document.getElementById('confirmed_password').value
-    var matchingIcon = document.querySelector('.octicon-dot-fill')
-    if (passwordConfirmationText) {
-        matchingIcon.classList.remove('hide')
-        if (passwordText != passwordConfirmationText) {
-            if (field.classList.contains('correct')) {
-                field.classList.remove('correct')
-                matchingIcon.classList.remove('confirmation-success')
-            }
-            matchingIcon.classList.add('confirmation-fail')
-            field.classList.add('not-correct')
-        } else {
-            if (field.classList.contains('not-correct')) {
-                field.classList.remove('not-correct')
-                matchingIcon.classList.remove('confirmation-fail')
-            }
-            matchingIcon.classList.add('confirmation-success')
-            field.classList.add('correct')
-        }
-    } else {
-        matchingIcon.classList.add('hide')
-        if (field.classList.contains('correct')) {
-            field.classList.remove('correct')
-            matchingIcon.classList.remove('confirmation-success')
-        }
-        if (field.classList.contains('not-correct')) {
-            field.classList.remove('not-correct')
-            matchingIcon.classList.remove('confirmation-fail')
-        }
-    }
-}

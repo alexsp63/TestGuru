@@ -1,16 +1,16 @@
 document.addEventListener('turbolinks:load', function() {
-    var control = document.querySelector('.sort-by-title')
+    const control = document.querySelector('.sort-by-title')
 
     if(control) { control.addEventListener('click', sortRowsByTitle) }
 })
 
 function sortRowsByTitle() {
-    var table = document.querySelector('table')
+    const table = document.querySelector('table')
 
-    var rows = table.querySelectorAll('tr')
-    var sortedRows = []
+    const rows = table.querySelectorAll('tr')
+    let sortedRows = []
 
-    for (var i = 1; i < rows.length; i++) {
+    for (let i = 1; i < rows.length; i++) {
         sortedRows.push(rows[i])
     }
 
@@ -24,14 +24,14 @@ function sortRowsByTitle() {
         this.querySelector('.octicon-arrow-down').classList.remove('hide')
     }
 
-    var sortedTable = document.createElement('table')
-    var head = sortedTable.createTHead()
-    var body = sortedTable.createTBody()
+    const sortedTable = document.createElement('table')
+    const head = sortedTable.createTHead()
+    const body = sortedTable.createTBody()
 
     sortedTable.classList.add('table')
     head.appendChild(rows[0])
 
-    for (var i = 0; i < sortedRows.length; i++) {
+    for (let i = 0; i < sortedRows.length; i++) {
         body.appendChild(sortedRows[i])
     }
 
@@ -39,8 +39,8 @@ function sortRowsByTitle() {
 }
 
 function compareRowsAsc(row1, row2) {
-    var testTitle1 = row1.querySelector('td').textContent
-    var testTitle2 = row2.querySelector('td').textContent
+    const testTitle1 = row1.querySelector('td').textContent
+    const testTitle2 = row2.querySelector('td').textContent
 
     if (testTitle1 < testTitle2) { return -1 }
     if (testTitle1 > testTitle2) { return 1 }
@@ -48,8 +48,8 @@ function compareRowsAsc(row1, row2) {
 }
 
 function compareRowsDesc(row1, row2) {
-    var testTitle1 = row1.querySelector('td').textContent
-    var testTitle2 = row2.querySelector('td').textContent
+    const testTitle1 = row1.querySelector('td').textContent
+    const testTitle2 = row2.querySelector('td').textContent
 
     if (testTitle1 < testTitle2) { return 1 }
     if (testTitle1 > testTitle2) { return -1 }
