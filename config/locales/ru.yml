@@ -4,3 +4,14 @@ ru:
       success_html: "<a href='%{link}' target='_blank'>Gist</a> успешно создан!"
       failure: "Во время сохранения gist произошла ошибка"
     description: "Вопрос по тесту %{title} TestGuru"
+  admin:
+    tests:
+      form_inline:
+        submit: "OK"
+  activerecord:
+    errors:
+      models:
+        test:
+          attributes:
+            category:
+              required: "не может быть пустой"

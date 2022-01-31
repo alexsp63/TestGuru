@@ -1,5 +1,10 @@
 <h1>Passing the <%= @test_passage.test.title %> Test</h1>
 
+<%= content_tag :progress, 
+                class: 'progress-line', 
+                data: { current_question_number: @test_passage.current_question_number, total: @test_passage.total } do %>
+<% end %>
+
 <b>
   <%= @test_passage.current_question_number %>/<%= @test_passage.total %>
   <%= @test_passage.current_question.title %>

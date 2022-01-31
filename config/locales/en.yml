@@ -36,3 +36,14 @@ en:
       success_html: "<a href='%{link}' target='_blank'>Gist</a> was successfully created!"
       failure: "An error occurred while saving gist"
     description: "A question about %{title} from TestGuru"
+  admin:
+    tests:
+      form_inline:
+        submit: "OK"
+  activerecord:
+    errors:
+      models:
+        test:
+          attributes:
+            category:
+              required: "can't be blank"
