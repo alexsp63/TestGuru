@@ -23,17 +23,18 @@
     <%= f.text_field :second_name, autofocus: true, autocomplete: "second_name" %>
   </div>
 
-  <div class="field">
+  <div class="field inputed-password">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", id: :inputed_password %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="field confirmed-password">
+    <%= f.label :password_confirmation %>
+    <%= octicon 'dot-fill', class: "hide" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", id: :confirmed_password %>
   </div>
 
   <div class="actions">
