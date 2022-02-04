@@ -38,11 +38,11 @@ class TestPassage < ApplicationRecord
 
   def end_time
     test_time = self.test.time_limit
-    created_at + test_time.hour.hours + test_time.min.minutes + test_time.sec.seconds - 1.seconds
+    created_at + test_time.hour.hours + test_time.min.minutes + test_time.sec.seconds
   end
 
   def time_is_over?
-    Time.now >= end_time
+    Time.now >= end_time - 1.seconds
   end
 
   private
