@@ -36,6 +36,11 @@ class TestPassage < ApplicationRecord
     percent >= SUCCESS_RATIO
   end
 
+  def end_time
+    test_time = self.test.time_limit
+    self.created_at + test_time.hour.hours + test_time.min.minutes + test_time.sec.seconds
+  end
+
   private
 
   def before_validation_set_current_question
