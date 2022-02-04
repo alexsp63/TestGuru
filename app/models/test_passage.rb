@@ -13,7 +13,7 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_is_over?
   end
 
   def total
@@ -33,12 +33,16 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    percent >= SUCCESS_RATIO
+    percent >= SUCCESS_RATIO && !time_is_over?
   end
 
   def end_time
     test_time = self.test.time_limit
-    self.created_at + test_time.hour.hours + test_time.min.minutes + test_time.sec.seconds
+    created_at + test_time.hour.hours + test_time.min.minutes + test_time.sec.seconds - 1.seconds
+  end
+
+  def time_is_over?
+    Time.now >= end_time
   end
 
   private

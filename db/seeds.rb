@@ -46,20 +46,20 @@ tests = Test.create!([
                          title: 'Rails Basics',
                          category: categories[0],
                          author: users[0],
-                         time_limit: DateTime.strptime("00:02:00", "%H:%M:%S")
+                         time_limit: DateTime.strptime('00:02:00', '%H:%M:%S')
                        },
                        {
                          title: 'Advanced Rails',
                          category: categories[0],
                          author: users[0],
                          level: 3,
-                         time_limit: DateTime.strptime("00:02:00", "%H:%M:%S")
+                         time_limit: DateTime.strptime('00:02:00', '%H:%M:%S')
                        },
                        {
                          title: 'CSS Basics',
                          category: categories[1],
                          author: users[0],
-                         time_limit: DateTime.strptime("00:02:00", "%H:%M:%S")
+                         time_limit: DateTime.strptime('00:02:00', '%H:%M:%S')
                        }
                      ])
 
