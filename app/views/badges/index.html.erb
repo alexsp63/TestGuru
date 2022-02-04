@@ -1,0 +1,16 @@
+<h1> All Badges </h1>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Badge Title</th>
+      <th>Badge Image</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @badges %>
+  </tbody>
+</table>

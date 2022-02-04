@@ -1,0 +1,21 @@
+<h1> All Badges </h1>
+
+<p>
+  <%= link_to 'New Badge', new_admin_badge_path %> 
+</p>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Badge Title</th>
+      <th>Badge Image</th>
+      <th>Description</th>
+      <th colspan="2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @badges %>
+  </tbody>
+</table>

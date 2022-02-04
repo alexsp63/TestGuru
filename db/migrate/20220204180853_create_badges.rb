@@ -4,6 +4,8 @@ class CreateBadges < ActiveRecord::Migration[6.1]
       t.string :title, null: false
       t.string :image_url, null: false
       t.string :description, null: false
+      t.string :criteria, null: false
+      t.string :criteria_value, null: false
       t.references :creator, null: false, foreign_key: { to_table: :users }
 
       t.timestamps
