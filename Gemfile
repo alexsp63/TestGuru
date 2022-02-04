@@ -36,8 +36,8 @@ gem 'octokit'
 
 # UI
 
-gem 'jquery-rails'
 gem 'bootstrap'
+gem 'jquery-rails'
 gem 'octicons_helper'
 
 group :development, :test do
