@@ -1,5 +1,10 @@
 <h1>Passing the <%= @test_passage.test.title %> Test</h1>
 
+<%= content_tag :p,
+                class: 'timer',
+                data: { end_time: @test_passage.end_time.to_s } do %>
+<% end %>
+
 <%= content_tag :progress, 
                 class: 'progress-line', 
                 data: { current_question_number: @test_passage.current_question_number, total: @test_passage.total } do %>
@@ -20,6 +25,6 @@
 
   <div>
     <%= link_to 'Gist Question', test_passage_gists_path(@test_passage), method: :post %><br>
-    <%= form.submit 'Next' %>
+    <%= form.submit 'Next', class: 'next-button' %>
   </div>
 <% end %>
