@@ -9,6 +9,7 @@ class Test < ApplicationRecord
   validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than: 0 }
 
+  scope :by_level, ->(wanted_level) { where(level: wanted_level) }
   scope :by_levels, ->(start_level, end_level) { where(level: start_level..end_level) }
   scope :easy, -> { by_levels(0, 1) }
   scope :middle, -> { by_levels(2, 4) }
@@ -22,5 +23,13 @@ class Test < ApplicationRecord
 
   def self.desc_names_by_category(category_title)
     desc_by_category(category_title).pluck(:title)
+  end
+
+  def self.tests_by_category_title(category_title)
+    desc_by_category(category_title)
+  end
+
+  def self.tests_by_level(level)
+    by_level(level)
   end
 end

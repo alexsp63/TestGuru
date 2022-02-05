@@ -9,9 +9,4 @@ class BadgesController < ApplicationController
     @badges = current_user.badges
     render :index
   end
-
-  def gain
-    current_user.badges.push(@badge)
-    # redirect_to current_user.test_passage(@test)
-  end
 end

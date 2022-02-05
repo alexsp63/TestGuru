@@ -12,9 +12,7 @@ Rails.application.routes.draw do
     post :start, on: :member
   end
 
-  resources :badges, only: :index do
-    post :gain, on: :member
-  end
+  resources :badges, only: :index
 
   get :user_badges, to: 'badges#gained_badges'
 
