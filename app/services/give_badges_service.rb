@@ -3,7 +3,7 @@ class GiveBadgesService
     passed_all_tests_for_category: Badges::AllTestsForCategorySpecification,
     test_passed_by_try: Badges::PassedByTrySpecification,
     passed_all_tests_for_level: Badges::AllTestsForLevelSpecification
-  }
+  }.freeze
 
   def initialize(test_passage)
     @test_passage = test_passage
