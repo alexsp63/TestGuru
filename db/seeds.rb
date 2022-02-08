@@ -126,3 +126,30 @@ Answer.create!([
                    question: questions[2]
                  }
                ])
+
+Badge.create!([
+                {
+                  title: 'Level 1 Test Guru',
+                  image_url: 'https://i.ya-webdesign.com/images/quality-seal-png-8.png',
+                  description: 'All Tests with Level 1',
+                  criteria: 'passed_all_tests_for_level',
+                  criteria_value: '1',
+                  creator: User.first
+                },
+                {
+                  title: 'Backend Guru',
+                  image_url: 'https://i.ya-webdesign.com/images/badge-transparent-clip-art-2.png',
+                  description: 'All Tests with Backend Category',
+                  criteria: 'passed_all_tests_for_category',
+                  criteria_value: 'Backend',
+                  creator: User.first
+                },
+                {
+                  title: '1st Try Guru',
+                  image_url: 'https://i.ya-webdesign.com/images/red-seal-png-13.png',
+                  description: 'Test was Passed with the 1st try',
+                  criteria: 'test_passed_by_try',
+                  criteria_value: '1',
+                  creator: User.first
+                }
+              ])
