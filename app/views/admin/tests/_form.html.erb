@@ -17,6 +17,16 @@
   </div>
 
   <div>
+    <%= form.label :time_limit %><br>
+    <div class='test-time-limit'>
+      <%= form.time_select :time_limit, 
+                            id: :test_time_limit, 
+                            include_seconds: true, 
+                            default: {hour: 0, min: 15, sec: 0} %>
+    </div>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 
